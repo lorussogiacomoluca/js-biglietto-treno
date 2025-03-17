@@ -31,24 +31,26 @@ let finalPrice;
 // IF
 if (numKm > 0){
     if (age < 18){
-        finalPrice = (pricePerKm * numKm)*(1-discount18);
+        finalPrice = ((pricePerKm * numKm)*(1-discount18)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
+        totalDiscount = ((pricePerKm * numKm)*(discount18)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 
-        console.log(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa UNDER 18. Sconto applicato: ${(pricePerKm * numKm)*(discount18)} €  `);
+        console.log(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa UNDER 18. Sconto applicato: ${totalDiscount}`);
 
-        alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa UNDER 18. Sconto applicato: ${(pricePerKm * numKm)*(discount18)} €  `);
+        alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa UNDER 18. Sconto applicato: ${totalDiscount}`);
 
     }else if (age > 65){
-        finalPrice = (pricePerKm * numKm)*(1-discount65);
+        finalPrice = ((pricePerKm * numKm)*(1-discount65)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
+        totalDiscount = ((pricePerKm * numKm)*(discount65)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 
-        console.log(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa OVER 65. Sconto applicato: ${(pricePerKm * numKm)*(discount65)} €  `);
+        console.log(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa OVER 65. Sconto applicato: ${totalDiscount}`);
 
-        alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa OVER 65. Sconto applicato: ${(pricePerKm * numKm)*(discount65)} €  `);
+        alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa OVER 65. Sconto applicato: ${totalDiscount}`);
     }else {
-        finalPrice = (pricePerKm * numKm);
+        finalPrice = ((pricePerKm * numKm)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 
         console.log(`Prezzo finale senza sconto: €${finalPrice}`);
 
-        alert(console.log(`Prezzo finale senza sconto: €${finalPrice}`));
+        alert(`Prezzo finale senza sconto: €${finalPrice}`);
     }
 }else{
     alert('Km non validi.')
