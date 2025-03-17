@@ -32,13 +32,23 @@ let finalPrice;
 if (numKm > 0){
     if (age < 18){
         finalPrice = (pricePerKm * numKm)*(1-discount18);
-        console.log(finalPrice);
+
+        console.log(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa UNDER 18. Sconto applicato: ${(pricePerKm * numKm)*(discount18)} €  `);
+
+        alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa UNDER 18. Sconto applicato: ${(pricePerKm * numKm)*(discount18)} €  `);
+
     }else if (age > 65){
         finalPrice = (pricePerKm * numKm)*(1-discount65);
-        console.log(finalPrice);
+
+        console.log(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa OVER 65. Sconto applicato: ${(pricePerKm * numKm)*(discount65)} €  `);
+
+        alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa OVER 65. Sconto applicato: ${(pricePerKm * numKm)*(discount65)} €  `);
     }else {
         finalPrice = (pricePerKm * numKm);
-        console.log(finalPrice);
+
+        console.log(`Prezzo finale senza sconto: €${finalPrice}`);
+
+        alert(console.log(`Prezzo finale senza sconto: €${finalPrice}`));
     }
 }else{
     alert('Km non validi.')
