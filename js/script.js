@@ -1,5 +1,5 @@
 /*
-SOTTOPROBLEMI
+SOTTOPROBLEMI BASE
 - creazione variabile costante: pricePerKm
 - creazione variabile costante: discount18
 - creazione variabile costante: discount65
@@ -28,13 +28,9 @@ let age = parseInt(prompt('Inserisci età del passeggero'))
 // finalPrice
 let finalPrice;
 
-// definizione tariffa
-let tariffa;
-
 // IF
 if (numKm > 0){
     if (age < 18){
-        tariffa = `Tariffa UNDER 18: ${-discount18*100}%`
         finalPrice = ((pricePerKm * numKm)*(1-discount18)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
         totalDiscount = ((pricePerKm * numKm)*(discount18)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 
@@ -43,7 +39,6 @@ if (numKm > 0){
         alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa UNDER 18. Sconto applicato: ${totalDiscount}`);
 
     }else if (age > 65){
-        tariffa = `Tariffa OVER 65: ${discount65*100}`
         finalPrice = ((pricePerKm * numKm)*(1-discount65)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
         totalDiscount = ((pricePerKm * numKm)*(discount65)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 
@@ -51,7 +46,6 @@ if (numKm > 0){
 
         alert(`Il costo del biglietto per ${numKm} km è di ${finalPrice} €. Il prezzo si intende scontato per la tariffa OVER 65. Sconto applicato: ${totalDiscount}`);
     }else {
-        tariffa = "Tariffa standard";
         finalPrice = ((pricePerKm * numKm)).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
 
         console.log(`Prezzo finale senza sconto: €${finalPrice}`);
@@ -59,21 +53,5 @@ if (numKm > 0){
         alert(`Prezzo finale senza sconto: €${finalPrice}`);
     }
 }else{
-    tariffa = '';
     alert('Km non validi.')
 }
-
-//BONUS SECTION
-document.getElementById("pricePerKm").innerHTML = `${pricePerKm.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' })}/km`;
-
-document.getElementById("tariffa").innerHTML = `${tariffa}`;
-
-document.getElementById("age").innerHTML = `${age} anni`;
-
-document.getElementById("numKm").innerHTML = `${numKm} KM`;
-
-document.getElementById("price").innerHTML = `${(numKm*pricePerKm).toLocaleString('it-IT', { style: 'currency', currency: 'EUR' })} `;
-
-document.getElementById("totalDiscount").innerHTML = `${totalDiscount} `;
-
-document.getElementById("finalPrice").innerHTML = `${finalPrice} `;
