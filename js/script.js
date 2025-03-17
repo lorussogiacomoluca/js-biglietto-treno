@@ -12,3 +12,9 @@ SOTTOPROBLEMI
 
 // pricePerKm variable
 let pricePerKm = 0.21;
+
+// discount18
+let discount18 = 0.2;
+
+//discount65
+let discount65= 0.4;
