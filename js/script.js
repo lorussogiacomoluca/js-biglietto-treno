@@ -24,3 +24,6 @@ let numKm = parseInt(prompt('Inserisci il numero di km da percorrere'))
 
 // age
 let age = parseInt(prompt('Inserisci età del passeggero'))
+
+// finalPrice
+let finalPrice;
