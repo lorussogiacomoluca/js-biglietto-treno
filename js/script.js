@@ -18,3 +18,9 @@ let discount18 = 0.2;
 
 //discount65
 let discount65= 0.4;
+
+// numKm
+let numKm = parseInt(prompt('Inserisci il numero di km da percorrere'))
+
+// age
+let age = parseInt(prompt('Inserisci età del passeggero'))
