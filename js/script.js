@@ -27,3 +27,19 @@ let age = parseInt(prompt('Inserisci età del passeggero'))
 
 // finalPrice
 let finalPrice;
+
+// IF
+if (numKm > 0){
+    if (age < 18){
+        finalPrice = (pricePerKm * numKm)*(1-discount18);
+        console.log(finalPrice);
+    }else if (age > 65){
+        finalPrice = (pricePerKm * numKm)*(1-discount65);
+        console.log(finalPrice);
+    }else {
+        finalPrice = (pricePerKm * numKm);
+        console.log(finalPrice);
+    }
+}else{
+    alert('Km non validi.')
+}
